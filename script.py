@@ -90,11 +90,27 @@ FUNCTION login(username, password):
     ELSE:
         DISPLAY "Your login information was incorrect. Please try again."
 
-
-NOTE dictionary format:
-
-banking_customers = {
-    'username': [password, customer_name, account_balance],
-    'username': [password, customer_name, account_balance]
-}
 '''
+
+def login():
+
+    user_input = input("Username:")
+    user_password = input("Password:")
+
+    account_match = banking_customers[user_input]
+    correct_password = account_match[0]
+    print (correct_password)
+
+    if user_password == correct_password:
+        display_account_info(user_input)
+
+    else:
+        print("Username and password not found.")
+        print("")
+        login()
+
+
+print ("Welcome to Bank of Python")
+print ("To get started, please login below:")
+print ("")
+login()
