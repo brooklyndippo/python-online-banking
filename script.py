@@ -42,6 +42,7 @@ def load_data(filename):
         name = value[2]
         print (f"name: {name}")
         balance = value[3]
+        int(balance)
         print (f"balance: {balance}")
 
         banking_customers[username]=password, name, balance
@@ -61,6 +62,24 @@ FUNCTION display_account_info(username):
 
     DISPLAY ("customer_name: Your account balance is $account_balance")
     RETURN ("customer_name, account_balance")
+
+'''
+
+def display_account_info(username):
+    customer_account = banking_customers[username]
+    
+    customer_name = customer_account[1] #get the customer name from the account
+    account_balance = customer_account[2] #get the customer name from the account
+
+    print ("")
+    print (f"Hi {customer_name}, welcome back!")
+    print (f"Your account balance is:")
+    print ("")
+    print (f"${account_balance}")
+
+display_account_info("betho")
+'''
+
 
 FUNCTION login(username, password):
     SET correct_password = GET dictionary element with key(username)
