@@ -1,0 +1,40 @@
+Write a function to load Write a function to load data. Parameter: file name, returns a list of users.
+Write a function to display the user information. Parameters: one or more strings, or an array and return a formatted string.
+Write a login function that takes username and password as parameters and returns a user dictionary.
+
+
+INITIALIZE empty dictionary banking_customers
+
+FUNCTION load_data(filename):
+    IMPORT data.txt file
+    SPLIT at each comma to create a list
+    SET username = key 
+    APPEND to dictionary banking_customers
+    SET password, name, balance = pairs
+    APPEND to dictionary banking_customers
+
+    RETURN banking_customers
+
+FUNCTION display_account_info(username):
+    SET customer_name = GET dictionary element with key
+    SET account_balance = GET dictionary element with key
+
+    DISPLAY ("customer_name: Your account balance is $account_balance")
+    RETURN ("customer_name, account_balance")
+
+FUNCTION login(username, password):
+    SET correct_password = GET dictionary element with key(username)
+
+    IF the password == correct_password:
+        THEN display_account_info(username)
+    
+    ELSE:
+        DISPLAY "Your login information was incorrect. Please try again."
+
+
+NOTE dictionary format:
+
+banking_customers = {
+    'username': [password, customer_name, account_balance],
+    'username': [password, customer_name, account_balance]
+}
